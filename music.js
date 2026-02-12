@@ -2,9 +2,9 @@ const audio = new Audio();
 
 // PLAYLIST (change titles + files)
 const playlist = [
-  { title: "Song 1", src: "music/song1.mp3" },
-  { title: "Song 2", src: "music/song2.mp3" },
-  { title: "Song 3", src: "music/song3.mp3" }
+  { title: "Nobela", src: "Join The Club - Nobela (Lyrics).mp3" },
+  { title: "Sa'yo", src: "Sa'yo.mp3" },
+  { title: "Palagi", src: "Palagi.mp3" }
 ];
 
 let currentIndex = 0;
