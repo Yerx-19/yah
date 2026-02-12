@@ -1,15 +1,18 @@
+/* ===== BASE ===== */
 body {
   margin: 0;
   height: 100vh;
   background: linear-gradient(135deg, #ffdde1, #ee9ca7);
   font-family: 'Segoe UI', sans-serif;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   overflow: hidden;
 }
 
-/* INTRO PAGE */
+/* ===== INTRO PAGE ===== */
 .intro {
   width: 100%;
   text-align: center;
@@ -21,9 +24,9 @@ body {
   margin-bottom: 30px;
 }
 
-/* BUTTON */
+/* ===== BUTTONS ===== */
 .btn {
-  padding: 14px 36px;
+  padding: 12px 32px;
   background: white;
   color: #e75480;
   text-decoration: none;
@@ -36,27 +39,61 @@ body {
   transform: scale(1.08);
 }
 
-/* MESSAGE */
+/* ghost button for back */
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== MESSAGE AREA ===== */
 .message {
   max-width: 750px;
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 40px;
 }
 
-.message h1 {
-  font-size: 2.6rem;
+/* scrollable text box */
+.text-box {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+
+  padding: 25px;
+  max-height: 60vh;       /* MAKES LONG MESSAGE FIT */
+  overflow-y: auto;
+
   color: white;
-  line-height: 1.4;
-  text-shadow: 0 12px 30px rgba(0,0,0,0.3);
+  line-height: 1.7;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
+/* aesthetic scrollbar */
+.text-box::-webkit-scrollbar {
+  width: 6px;
+}
+.text-box::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.6);
+  border-radius: 10px;
+}
+
+/* signature */
 .signature {
-  margin-top: 25px;
+  margin-top: 15px;
   font-style: italic;
   color: rgba(255,255,255,0.85);
 }
 
-/* GALLERIES */
+/* navigation buttons */
+.nav-buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 20px;
+}
+
+/* ===== GALLERIES ===== */
 .gallery {
   display: flex;
   flex-direction: column;
@@ -64,13 +101,14 @@ body {
   padding: 30px;
 }
 
-/* AESTHETIC FRAMES */
+/* ===== AESTHETIC FRAMES ===== */
 .frame {
   width: 180px;
   height: 240px;
-  background: #fff;
+  background: white;
   padding: 10px;
   border-radius: 20px;
+
   box-shadow:
     0 20px 35px rgba(0,0,0,0.25),
     inset 0 0 0 2px #f7c1d9;
@@ -83,7 +121,7 @@ body {
   border-radius: 14px;
 }
 
-/* TILTS */
+/* tilts */
 .tilt-left {
   transform: rotate(-6deg);
 }
@@ -92,13 +130,21 @@ body {
   transform: rotate(6deg);
 }
 
-/* MOBILE */
+/* ===== MOBILE ===== */
 @media (max-width: 900px) {
+  body {
+    justify-content: center;
+  }
+
   .gallery {
     display: none;
   }
 
-  .message h1 {
-    font-size: 2rem;
+  .message {
+    max-width: 90%;
+  }
+
+  .text-box {
+    max-height: 65vh;
   }
 }
