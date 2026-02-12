@@ -148,3 +148,123 @@ body {
     max-height: 65vh;
   }
 }
+/* ===== MEMORIES PAGE ===== */
+.memories-page {
+  background: #f6f1eb;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* heading */
+.memories-header {
+  position: relative;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.memories-header h1 {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 4rem;
+  color: #e75480;
+  letter-spacing: 3px;
+}
+
+/* hearts */
+.heart {
+  position: absolute;
+  font-size: 1.8rem;
+  color: #e75480;
+}
+
+.heart.left {
+  left: -40px;
+  top: 10px;
+}
+
+.heart.right {
+  right: -40px;
+  top: 10px;
+}
+
+/* ===== MARQUEE ===== */
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  margin: 30px 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 40px; /* SPACE so it’s not train-like */
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+.marquee-track img {
+  width: 180px;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  transition: transform 0.4s ease;
+}
+
+/* hover grow */
+.marquee-track img:hover {
+  transform: scale(1.15);
+  z-index: 2;
+}
+
+/* infinite movement */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== MEMORY TEXT BOXES ===== */
+.memory-texts {
+  display: flex;
+  gap: 30px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.memory-box {
+  background: #ffe3ec;
+  padding: 25px;
+  border-radius: 20px;
+  width: 260px;
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.memory-box p {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* ===== NAV FIX ===== */
+.memories-page .nav-buttons {
+  margin-bottom: 40px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .memory-texts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .marquee-track img {
+    width: 140px;
+    height: 180px;
+  }
+
+  .memories-header h1 {
+    font-size: 3rem;
+  }
+}
