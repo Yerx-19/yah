@@ -215,21 +215,28 @@ body:not(.memories-page) {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 40px;
+  gap: 60px;
   margin: 60px auto;
   width: 95%;
 }
 
-/* Center Scroll Box */
+/* SIDE GALLERIES */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* CENTER COLUMN */
 .memory-scroll {
-  width: 600px;
+  width: 650px;
   max-height: 75vh;
   overflow-y: auto;
-  background: rgba(255,255,255,0.75);
+  background: rgba(255,255,255,0.85);
   padding: 50px;
   border-radius: 30px;
   backdrop-filter: blur(10px);
-  text-align: center;
+  text-align: left; /* single column clean look */
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
@@ -239,7 +246,6 @@ body:not(.memories-page) {
   line-height: 1.9;
   color: #6b4a4a;
 }
-
 /* =========================
    MUSIC PLAYER
 ========================= */
