@@ -4,7 +4,10 @@ const audio = new Audio();
 const playlist = [
   { title: "Nobela", src: "Join The Club - Nobela (Lyrics).mp3" },
   { title: "Sa'yo", src: "Sa'yo.mp3" },
-  { title: "Palagi", src: "Palagi.mp3" }
+  { title: "Synesthesia", src: "Synesthesia.mp3" },
+  { title: "Beer", src: "Beer.mp3" },
+  { title: "Your Song", src: "Your Song.mp3" },
+  { title: "Tulog Na", src: "Tulog Na.mp3" }
 ];
 
 let currentIndex = 0;
