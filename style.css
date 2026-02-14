@@ -130,181 +130,69 @@ body {
   transform: rotate(6deg);
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 900px) {
-  body {
-    justify-content: center;
-  }
+/* ===== MEMORIES LAYOUT ===== */
 
-  .gallery {
-    display: none;
-  }
-
-  .message {
-    max-width: 90%;
-  }
-
-  .text-box {
-    max-height: 65vh;
-  }
-}
-/* ===== MEMORIES PAGE ===== */
-.memories-page {
-  background: #f6f1eb;
+.memories-layout {
+  display: flex;
   justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* SIDE GALLERIES */
+.gallery {
+  display: flex;
   flex-direction: column;
+  gap: 25px;
 }
 
-/* heading */
-.memories-header {
-  position: relative;
-  margin-top: 30px;
-  margin-bottom: 20px;
-}
-
-.memories-header h1 {
-  font-family: 'Brush Script MT', cursive;
-  font-size: 4rem;
-  color: #e75480;
-  letter-spacing: 3px;
-}
-
-/* hearts */
-.heart {
-  position: absolute;
-  font-size: 1.8rem;
-  color: #e75480;
-}
-
-.heart.left {
-  left: -40px;
-  top: 10px;
-}
-
-.heart.right {
-  right: -40px;
-  top: 10px;
-}
-
-/* ===== MARQUEE ===== */
-.marquee {
-  width: 100%;
-  overflow: hidden;
-  margin: 30px 0;
-}
-
-.marquee-track {
-  display: flex;
-  gap: 40px; /* SPACE so it’s not train-like */
-  width: max-content;
-  animation: scroll 40s linear infinite;
-}
-
-.marquee-track img {
-  width: 180px;
-  height: 230px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
-  transition: transform 0.4s ease;
-}
-
-/* hover grow */
-.marquee-track img:hover {
-  transform: scale(1.15);
-  z-index: 2;
-}
-
-/* infinite movement */
-@keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* ===== MEMORY TEXT BOXES ===== */
-.memory-texts {
-  display: flex;
-  gap: 30px;
-  margin: 40px 0;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.memory-box {
-  background: #ffe3ec;
-  padding: 25px;
-  border-radius: 20px;
-  width: 260px;
-  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
-}
-
-.memory-box p {
-  color: #555;
-  line-height: 1.6;
-}
-
-/* ===== NAV FIX ===== */
-.memories-page .nav-buttons {
-  margin-bottom: 40px;
-}
-
-/* ===== MOBILE ===== */
-@media (max-width: 900px) {
-  .memory-texts {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .marquee-track img {
-    width: 140px;
-    height: 180px;
-  }
-
-  .memories-header h1 {
-    font-size: 3rem;
-  }
-}
-
-.music-player {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(255, 182, 193, 0.9);
-  padding: 12px 18px;
-  border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  font-family: 'Segoe UI', sans-serif;
-}
-
-#song-title {
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-  color: #b03060;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 120px;
-}
-
-.controls {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-}
-
-.music-player button {
+.frame {
+  width: 160px;
+  height: 220px;
   background: white;
-  border: none;
-  border-radius: 50%;
-  width: 36px;
-  height: 36px;
-  cursor: pointer;
-  font-size: 1rem;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow:
+    0 20px 35px rgba(0,0,0,0.25),
+    inset 0 0 0 2px #f7c1d9;
+  transition: 0.3s ease;
 }
 
-.music-player button:hover {
-  transform: scale(1.1);
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.tilt-left {
+  transform: rotate(-6deg);
+}
+
+.tilt-right {
+  transform: rotate(6deg);
+}
+
+.frame:hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* CENTER SCROLL BOX */
+.memory-scroll {
+  width: 600px;
+  max-height: 75vh;
+  overflow-y: auto;
+  background: rgba(255,255,255,0.7);
+  padding: 50px;
+  border-radius: 30px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+.memory-scroll p {
+  margin-bottom: 28px;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: #6b4a4a;
 }
